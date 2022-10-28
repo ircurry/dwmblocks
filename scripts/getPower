@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# pow="$(acpi | grep -o ' [0-9]\{1,3\}%')"
+# echo " [ $pow ]"
+pow=$(acpi | awk '{ print $4 }' | sed 's/\,//')
+echo "[  $pow]"
